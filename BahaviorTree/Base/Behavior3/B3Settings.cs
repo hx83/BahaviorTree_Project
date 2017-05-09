@@ -97,6 +97,7 @@ namespace Behavior3CSharp
         {
             _id = (string)data["id"];
             _name = (string)data["name"];
+            
             _title = (string)data["title"];
             _description = (string)data["description"];
             if (data.Keys.Contains("children"))
@@ -106,6 +107,10 @@ namespace Behavior3CSharp
                 {
                     _children.Add((string)data["children"][i]);
                 }
+            }
+            else if (data.Keys.Contains("child"))
+            {
+                _children.Add((string)data["child"]);
             }
             foreach (string propKey in data["properties"].Keys)
             {
